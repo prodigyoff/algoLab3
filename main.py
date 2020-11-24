@@ -20,7 +20,9 @@ if __name__ == '__main__':
             edges.append(Edge(int(starting_point) - 1, int(destination) - 1, weight))
             edges.append(Edge(int(destination) - 1, int(starting_point) - 1, weight))
 
-        graph = Graph(int(edges_amount), edges)
+        graph = Graph(int(nodes_amount), edges)
+        print('Graph:')
+        graph.printGraph()
 
         min_weight = sys.maxsize
         for vertex in range(len(graph.adjacency_list)):
@@ -28,6 +30,8 @@ if __name__ == '__main__':
                 dijkstra_result = dijkstra(graph.adjacency_list, vertex)
                 current_max_weight = max(dijkstra_result[client] for client in clients)
                 min_weight = min(current_max_weight, min_weight)
+
+        print(f'Answer: {min_weight}')
 
     with open(OUTPUT_FILE_LOCATION, 'w') as fileOut:
         fileOut.write(str(min_weight))
