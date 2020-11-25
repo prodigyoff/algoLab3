@@ -9,6 +9,9 @@ parent_vertexes = []
 
 def dijkstra(graph: list, start_vertex: int):
     """
+    Dijkstra algorithm returns list of weights to all vertexes from our starting point.
+    In our test-cases starting point is the first vertex.
+
     >>> edges = [Edge(0, 2, 10), Edge(2, 3, 80), Edge(2, 1, 40), Edge(2, 0, 10), Edge(2, 3, 80),
     ...    Edge(3, 2, 80), Edge(3, 1, 100), Edge(3, 4, 50), Edge(4, 3, 50), Edge(4, 5, 20),
     ...    Edge(5, 4, 20), Edge(1, 2, 40), Edge(1, 3, 100)]
